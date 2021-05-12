@@ -11,5 +11,14 @@ namespace wh_mgmt {
   /// Interaction logic for App.xaml
   /// </summary>
   public partial class App : Application {
+    
+    protected override void OnStartup(StartupEventArgs e) {
+      base.OnStartup(e);
+      view.BrowseWindow window = new view.BrowseWindow();
+      viewModel.whdocBrowseViewModel VM = new viewModel.whdocBrowseViewModel();
+      window.DataContext = VM;
+      window.Show();
+    }
+    
   }
 }
