@@ -10,69 +10,16 @@ namespace wh_mgmt.viewModel {
     #region FIELDS
 
     private IList<model.whdMstrModel> whdMstrList;
+    private ICommand createWhdMstrBrowse;
+    private ICommand readWhdMstrBrowse;
+    private ICommand updateWhdMstrBrowse;
+    private ICommand deleteWhdMstrBrowse;
 
     #endregion
 
     #region CONSTRUCTORS
 
     public whdocBrowseViewModel() {
-
-      whdMstrList = new List<model.whdMstrModel> {
-        new model.whdMstrModel {
-          Whdm_id = 1,
-          Whdm_date = DateTime.Today,
-          Whdm_nbr = "WZ/1/2021",
-          Whdm_cust = "50000000",
-          Whdm_name = "Shipper A",
-          Whdm_netto = 522,
-          Whdm_brutto = 522 * 1.23M
-        },
-        new model.whdMstrModel {
-          Whdm_id = 2,
-          Whdm_date = DateTime.Today,
-          Whdm_nbr = "WZ/2/2021",
-          Whdm_cust = "SAARSTAHL",
-          Whdm_name = "Shipper B",
-          Whdm_netto = 59876,
-          Whdm_brutto = 59876 * 1.23M
-        },
-        new model.whdMstrModel {
-          Whdm_id = 3,
-          Whdm_date = DateTime.Today,
-          Whdm_nbr = "WZ/3/2021",
-          Whdm_cust = "59810001",
-          Whdm_name = "Shipper C",
-          Whdm_netto = 56486,
-          Whdm_brutto = 56486 * 1.23M
-        },
-        new model.whdMstrModel {
-          Whdm_id = 4,
-          Whdm_date = DateTime.Today,
-          Whdm_nbr = "WZ/4/2021",
-          Whdm_cust = "CAMESA",
-          Whdm_name = "Shipper D",
-          Whdm_netto = 12346859,
-          Whdm_brutto = 12346859 * 1.23M
-        },
-        new model.whdMstrModel {
-          Whdm_id = 5,
-          Whdm_date = DateTime.Today,
-          Whdm_nbr = "WZ/5/2021",
-          Whdm_cust = "Tauron Wydobycie ",
-          Whdm_name = "Shipper E",
-          Whdm_netto = 95871544,
-          Whdm_brutto = 95871544 * 1.23M
-        },
-        new model.whdMstrModel {
-          Whdm_id = 6,
-          Whdm_date = DateTime.Today,
-          Whdm_nbr = "WZ/6/2021",
-          Whdm_cust = "SpaceX",
-          Whdm_name = "Shipper F",
-          Whdm_netto = 98745631258,
-          Whdm_brutto = 98745631258 * 1.23M
-        }
-      };
 
     }
 
@@ -94,18 +41,7 @@ namespace wh_mgmt.viewModel {
 
     #region INTERFACES
 
-    private ICommand updater;
-    public ICommand UpdateCommand {
-      get {
-        if (updater == null) {
-          updater = new Updater();
-        }
-        return updater;
-      }
-      set {
-        updater = value;
-      }
-    }
+
 
     #endregion
 
@@ -116,29 +52,71 @@ namespace wh_mgmt.viewModel {
       set { whdMstrList = value; }
     }
 
+    public ICommand ViewModelCommand {
+      get;
+      set;
+    }
+
+    private bool CanExecuteRead(object parameter) {
+      return true;
+    }
+
     #endregion
 
     #region METHODS
 
+    public ICommand CreateWhdMstrBrowse {
+      get {
+        if (createWhdMstrBrowse == null) {
+          createWhdMstrBrowse = new RelayCommand(param => this.ExecuteCreateWhdMstrBrowse(), null);
+        }
+        return createWhdMstrBrowse;
+      }
+    }
 
+    public ICommand ReadWhdMstrBrowse {
+      get {
+        if (readWhdMstrBrowse == null) {
+          readWhdMstrBrowse = new RelayCommand(param => this.ExecuteReadWhdMstrBrowse(), null);
+        }
+        return readWhdMstrBrowse;
+      }
+    }
+    public ICommand UpdateWhdMstrBrowse {
+      get {
+        if (updateWhdMstrBrowse == null) {
+          updateWhdMstrBrowse = new RelayCommand(param => this.ExecuteUpdateWhdMstrBrowse(), null);
+        }
+        return updateWhdMstrBrowse;
+      }
+    }
+    public ICommand DeleteWhdMstrBrowse {
+      get {
+        if (deleteWhdMstrBrowse == null) {
+          deleteWhdMstrBrowse = new RelayCommand(param => this.ExecuteDeleteWhdMstrBrowse(), null);
+        }
+        return deleteWhdMstrBrowse;
+      }
+    }
+    private void ExecuteCreateWhdMstrBrowse() {
+      System.Diagnostics.Debug.WriteLine("create");
+    }
+
+    public void ExecuteReadWhdMstrBrowse() {
+      System.Diagnostics.Debug.WriteLine("read");
+    }
+
+    public void ExecuteUpdateWhdMstrBrowse() {
+      System.Diagnostics.Debug.WriteLine("update");
+    }
+
+    public void ExecuteDeleteWhdMstrBrowse() {
+      System.Diagnostics.Debug.WriteLine("delete");
+    }
 
     #endregion
 
     #region CLASSES
-
-    private class Updater : ICommand {
-
-      public bool CanExecute(object parameter) {
-        return true;
-      }
-
-      public event EventHandler CanExecuteChanged;
-
-      public void Execute(object parameter) {
-
-      }
-
-    }
 
     #endregion
 

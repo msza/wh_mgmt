@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace wh_mgmt.model {
-  class whdMstrModel : INotifyPropertyChanged {
+  public class whdMstrModel : ObservedModel {
     //WH DOC MASTER
 
     //COMPONENTS ORDER BASED ON SA1201
@@ -44,7 +44,7 @@ namespace wh_mgmt.model {
 
     #region EVENTS
 
-    public event PropertyChangedEventHandler PropertyChanged = delegate { };
+    
 
     #endregion
 
@@ -58,7 +58,7 @@ namespace wh_mgmt.model {
     //  OnPropertyChanged("Whdd_id");
     //  OnPropertyChanged(p => p.Name);
     //  OnPropertyChanged(MethodBase.GetCurrentMethod().Name);
-    //  NotifyPropertyChanged(nameof(Whdd_id));
+    //  NotifyPropertyChanged(nameof(Whdm_id));
 
     public int Whdm_id {
       get { return whdm_id; }
@@ -120,9 +120,7 @@ namespace wh_mgmt.model {
 
     #region METHODS
 
-    public void OnPropertyChanged([CallerMemberName]string propertyName = "") {
-      PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-    }
+
 
     #endregion
 

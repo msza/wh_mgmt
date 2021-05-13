@@ -43,7 +43,7 @@
       Name="btnCreate"
       VerticalAlignment="Top" 
       Width="100"
-      Command="{Binding Path=UpdateCommand}"
+      Command="{Binding Path=CreateWhdMstrBrowse}"
     />
     <Button 
       Content="READ" 
@@ -54,7 +54,7 @@
       Name="btnRead"
       VerticalAlignment="Top" 
       Width="100"
-      Command="{Binding Path=UpdateCommand}"
+      Command="{Binding Path=ReadWhdMstrBrowse}"
     />
     <Button 
       Content="UPDATE" 
@@ -65,7 +65,7 @@
       Name="btnUpdate"
       VerticalAlignment="Top" 
       Width="100"
-      Command="{Binding Path=UpdateCommand}"
+      Command="{Binding Path=UpdateWhdMstrBrowse}"
     />
     <Button 
       Content="DELETE" 
@@ -76,7 +76,7 @@
       Name="btnDelete"
       VerticalAlignment="Top" 
       Width="100"
-      Command="{Binding Path=UpdateCommand}"
+      Command="{Binding Path=DeleteWhdMstrBrowse}"
     />
 
     <ListView Name="WhdGrid" Grid.Row="1" ItemsSource = "{Binding WhdMstrList}" Margin="0,175,0,0" >

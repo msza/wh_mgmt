@@ -56,10 +56,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DateTimeToDateConverter.cs" />
+    <Compile Include="model\ObservedModel.cs" />
+    <Compile Include="viewModel\RelayCommand.cs" />
     <Compile Include="viewModel\whdocBrowseViewModel.cs" />
     <Compile Include="viewModel\whdocViewModel.cs" />
     <Compile Include="view\BrowseWindow.xaml.cs">
       <DependentUpon>BrowseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\DetailWindow.xaml.cs">
+      <DependentUpon>DetailWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -77,6 +83,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="view\BrowseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\DetailWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,6 +119,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="wh_mgmt_db.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

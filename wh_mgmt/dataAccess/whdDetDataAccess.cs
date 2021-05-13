@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Transactions;
 
 namespace wh_mgmt.dataAccess {
-  class whdDetDataAccess {
+  public class whdDetDataAccess {
 
     #region FIELDS
 
@@ -82,7 +82,7 @@ namespace wh_mgmt.dataAccess {
       }
     }
 
-    public model.whdDetModel ReadWhdDet(model.whdDetModel in_whdDet) {
+    public model.whdDetModel ReadWhdDetz(model.whdDetModel in_whdDet) {
 
       model.whdDetModel retWhdDetModel = new model.whdDetModel();
 

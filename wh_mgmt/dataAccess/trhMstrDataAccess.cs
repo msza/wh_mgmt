@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace wh_mgmt.dataAccess {
-  class trhMstrDataAccess {
+  public class trhMstrDataAccess {
     //TRANSACTION HISTORY MASTER DATA ACCESS
 
     #region FIELDS

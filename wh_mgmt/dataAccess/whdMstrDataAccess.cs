@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Transactions;
 
 namespace wh_mgmt.dataAccess {
-  class whdMstrDataAccess {
+  public class whdMstrDataAccess {
 
     #region FIELDS
 
@@ -94,6 +94,9 @@ namespace wh_mgmt.dataAccess {
     public List<model.whdMstrModel> ReadWhdMstr() {
 
       List<model.whdMstrModel> retWhdMstrModelList = new List<model.whdMstrModel>();
+
+
+
 
       return retWhdMstrModelList;
     }

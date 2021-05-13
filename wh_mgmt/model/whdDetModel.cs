@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace wh_mgmt.model {
-  class whdDetModel : INotifyPropertyChanged {
+  public class whdDetModel : ObservedModel {
     //WH DOC DETAIL
 
     //COMPONENTS ORDER BASED ON SA1201
@@ -44,7 +44,6 @@ namespace wh_mgmt.model {
 
     #region EVENTS
 
-    public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
     #endregion
 
@@ -98,9 +97,7 @@ namespace wh_mgmt.model {
 
     #region METHODS
 
-    public void OnPropertyChanged([CallerMemberName]string propertyName = "") {
-      PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-    }
+
 
     #endregion
 
